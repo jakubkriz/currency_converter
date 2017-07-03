@@ -12,4 +12,4 @@ class CurrencyAPI:
         url = u"http://api.fixer.io/latest?base={0}&symbols={1}"
         complete_url = url.format(currency_input, currency_output)
         response = requests.get(complete_url).json()
-        return response[u'Result']
+        return response[u'rates'][currency_output]
