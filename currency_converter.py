@@ -4,26 +4,31 @@
 import sys
 import argparse
 import re
+import json
 
 def currency_type(input_string):
     input_string = input_string.strip()
-    error_message = '{0} is not a valid currency code, nor a currency symbol.'.format(input_string)
+    error_message = "{0} is not a valid currency code, nor a currency symbol."
+    error_message = error_message.format(input_string)
    
     # 3-letter currency code
-    if len(input_string) == 3:
-        pattern = re.compile(r'[A-Z]{3}')
-        if not pattern.match(input_string):
-            raise argparse.ArgumentTypeError(error_message)
-    # currency symbol
-    else:
-        if not is_currency_symbol(input_string):
-            raise argparse.ArgumentTypeError(error_message)
-
-    return input_string
+    pattern = re.compile(r'[A-Z]{3}')
+    if not pattern.match(input_string):
+        # currency symbol
+        if is_currency_symbol(input_string):
+            return input_string
+        raise argparse.ArgumentTypeError(error_message)
+    else:   
+        return input_string
 
 def is_currency_symbol(input_string):
-    # TODO
-    return False
+    input_symbol = input_string.strip()
+    with open("currencies.json") as file:
+        currencies = json.load(file)
+        if input_symbol.decode('utf-8') in currencies.values():
+            return True
+        else:
+            return False
 
 def get_arguments():
     parser = argparse.ArgumentParser()
