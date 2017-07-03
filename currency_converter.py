@@ -23,9 +23,9 @@ def currency_type(input_string):
 
 def is_currency_symbol(input_string):
     input_symbol = input_string.strip()
-    with open("currencies.json") as file:
+    with open("currency_symbols.json") as file:
         currencies = json.load(file)
-        if input_symbol.decode('utf-8') in currencies.values():
+        if input_symbol.decode('utf-8') in currencies.keys():
             return True
         else:
             return False

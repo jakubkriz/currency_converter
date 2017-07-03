@@ -1,0 +1,115 @@
+{
+    "€": [
+        "EUR"
+    ],
+    "$": [
+        "USD", 
+        "ARS", 
+        "AUD", 
+        "BSD", 
+        "BBD", 
+        "BMD", 
+        "BND", 
+        "CAD", 
+        "KYD", 
+        "CLP", 
+        "COP", 
+        "XCD", 
+        "SVC", 
+        "FJD", 
+        "GYD", 
+        "HKD", 
+        "LRD", 
+        "MXN", 
+        "NAD", 
+        "NZD", 
+        "SGD", 
+        "SBD", 
+        "SRD", 
+        "TVD"
+    ],
+    "£": [
+        "GBP", 
+        "EGP", 
+        "FKP", 
+        "GIP", 
+        "GGP", 
+        "IMP", 
+        "JEP", 
+        "LBP", 
+        "SHP",
+        "SYP"
+    ],
+    "؋": [
+        "AFN"
+    ],
+    "ƒ": [
+        "ANG", 
+        "AWG"
+    ],
+    "₡": [
+        "CRC"
+    ],
+    "₱": [
+        "CUP", 
+        "PHP"
+    ],
+    "₪": [
+        "ILS"
+    ],
+    "₹": [
+        "INR"
+    ],
+    "﷼": [
+        "IRR", 
+        "OMR",
+        "QAR",
+        "SAR",
+        "YER"
+    ],
+    "¥": [
+        "CNY", 
+        "JPY"
+    ],
+    "៛": [
+        "KHR"
+    ],
+    "₩": [
+        "KPW", 
+        "KRW"
+    ],
+    "₭": [
+        "LAK"
+    ],
+    "₨": [
+        "MUR",
+        "NPR",
+        "PKR",
+        "SCR",
+        "LKR"
+    ],
+    "₮": [
+        "MNT"
+    ],
+    "₦": [
+        "NGN"
+    ],
+    "zł": [
+        "PLN"
+    ],
+    "Gs": [
+        "PYG"
+    ],
+    "₽": [
+        "RUB"
+    ],
+    "฿": [
+        "THB"
+    ],
+    "₴": [
+        "UAH"
+    ],
+    "₫": [
+        "VND"
+    ]
+}
