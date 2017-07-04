@@ -12,29 +12,29 @@ class ConversionManager:
     """
     Represents a main class responsible for currency conversion
     """
-    def __init__(self, amount, input_currency, output_currency=None):
-        self.amount = amount
-        self.input_currency = self.__get_input_currency(input_currency)
-        self.output_currencies = self.__get_output_currencies(output_currency)
+    def __init__(self):
         self.logger = Logger()
 
-    def convert_amount(self):
+    def convert_amount(self, amount, input_currency, output_currency=None):
+        input_currency = self.__get_input_currency(input_currency)
+        output_currencies = self.__get_output_currencies(output_currency)
+
         input_dict = {
-            u'amount': self.amount, 
-            u'currency': self.input_currency}
+            u'amount': amount, 
+            u'currency': input_currency}
 
         output_dict = {}
-        for output_currency in self.output_currencies:
+        for output_currency in output_currencies:
             try:
-                if not self.input_currency == output_currency:
+                if not input_currency == output_currency:
                     rate = CurrencyApi.get_rate(
-                        self.input_currency, output_currency)
+                        input_currency, output_currency)
                     if rate:
-                        value = Decimal(self.amount) * Decimal(rate)
+                        value = Decimal(amount) * Decimal(rate)
                         current_dict = {output_currency: float(value)}
                         output_dict.update(current_dict)
                     else:
-                        msg = strings.NO_RATE.format(self.input_currency)
+                        msg = strings.NO_RATE.format(input_currency)
                         output_dict.update({u'error': msg})
             except requests.Timeout as exc:
                 self.logger.log_error(strings.API_TIMEOUT)
