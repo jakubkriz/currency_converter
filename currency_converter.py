@@ -1,41 +1,37 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import argparse
-import re
-import json
+
+from currency_converter_helper import CurrencyConverterHelper
+import strings
 
 def currency_type(input_string):
     input_string = input_string.strip()
-    error_message = "{0} is not a valid currency code, nor a currency symbol."
-    error_message = error_message.format(input_string)
+    error_message = strings.INVALID_INPUT.format(input_string)
    
-    # 3-letter currency code
-    pattern = re.compile(r'[A-Z]{3}')
-    if not pattern.match(input_string):
-        # currency symbol
-        if is_currency_symbol(input_string):
-            return input_string
-        raise argparse.ArgumentTypeError(error_message)
-    else:   
+    # 3-letter currency code or a currency symbol
+    if CurrencyConverterHelper.is_currency_code(input_string) or \
+       CurrencyConverterHelper.is_currency_symbol(input_string):
         return input_string
-
-def is_currency_symbol(input_string):
-    input_symbol = input_string.strip()
-    with open("currency_symbols.json") as file:
-        currencies = json.load(file)
-        if input_symbol.decode('utf-8') in currencies.keys():
-            return True
-        else:
-            return False
+    else:
+        raise argparse.ArgumentTypeError(error_message)
 
 def get_arguments():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--amount', type=float)
-    parser.add_argument('--input_currency', type=currency_type)
-    parser.add_argument('--output_currency', type=currency_type)
+    parser.add_argument(
+        '--amount', 
+        type=float,
+        default=None)
+    parser.add_argument(
+        '--input_currency', 
+        type=currency_type,
+        default=None)
+    parser.add_argument(
+        '--output_currency', 
+        type=currency_type,
+        default=None)
 
     args = parser.parse_args()
 
