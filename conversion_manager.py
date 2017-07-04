@@ -31,7 +31,7 @@ class ConversionManager:
                         input_currency, output_currency)
                     if rate:
                         value = Decimal(amount) * Decimal(rate)
-                        current_dict = {output_currency: float(value)}
+                        current_dict = {output_currency: "%0.2f"%value}
                         output_dict.update(current_dict)
                     else:
                         msg = strings.NO_RATE.format(input_currency)

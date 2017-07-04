@@ -14,24 +14,28 @@ class Parser:
     def parse_arguments(args):
         parser = argparse.ArgumentParser()
 
+        # Amount - required
         parser.add_argument(
             '--amount', 
             type=float,
-            default=None, 
             required=True)
+
+        # Input currency - required
         parser.add_argument(
             '--input_currency', 
             type=Parser.currency_type,
-            default=None, 
             required=True)
+
+        # Output currency - optional
         parser.add_argument(
             '--output_currency', 
-            type=Parser.currency_type,
-            default=None)
+            type=Parser.currency_type)
 
+        # Parse the arguments from the args variable
         return parser.parse_args(args)
         
     @staticmethod
+    # Currency type used by the parser to recognize a currency
     def currency_type(input_string):
         input_string = input_string.strip()
         error_message = strings.INVALID_INPUT.format(input_string)
