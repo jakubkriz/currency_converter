@@ -8,6 +8,7 @@ class TestCurrencyConverterHelper(unittest.TestCase):
     # def setUp(self):
 
     def test_is_currency_code(self): 
+        # A valid currency code must be recognized
         currency_code = 'CZK'
         is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
         self.assertEqual(is_curr_code, True)
@@ -32,8 +33,36 @@ class TestCurrencyConverterHelper(unittest.TestCase):
         is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
         self.assertEqual(is_curr_code, False)
 
-    # def test_is_currency_symbol(self):    
+    def test_is_currency_symbol(self):
+        # A valid currency symbol must be recognized
+        currency_symbol = 'Kč' 
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, True)
 
+        # A valid currency symbol can also be surrounded by whitespace characters
+        currency_symbol = '  € '
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, True)
+
+        # Vietnamese đồng must be recognized as a valid currency symbol
+        currency_symbol = '₫'
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, True)
+
+        # Numbers are not a valid currency symbol
+        currency_symbol = '12'
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, False)
+
+        # Random characters are not a valid currency symbol
+        currency_symbol = 'abSbsas'
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, False)
+
+        # Number sign is not a valid currency symbol
+        currency_symbol = '#'
+        is_curr_symbol = CurrencyConverterHelper.is_currency_symbol(currency_symbol)
+        self.assertEqual(is_curr_symbol, False)
 
     # def tearDown(self):
 
