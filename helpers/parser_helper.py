@@ -4,9 +4,9 @@ import argparse
 import re
 import json
 
-class CurrencyConverterHelper:
+class ParserHelper:
     """
-    Represents a helper class for CurrencyConverter
+    Represents a helper class for Parser
     """
     @staticmethod
     def is_currency_code(input_string):
