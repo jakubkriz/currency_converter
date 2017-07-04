@@ -3,7 +3,7 @@
 
 import argparse
 
-from currency_converter_helper import CurrencyConverterHelper
+from helpers.currency_converter_helper import CurrencyConverterHelper
 import strings
 
 def currency_type(input_string):
