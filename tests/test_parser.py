@@ -7,7 +7,6 @@ import strings
 from helpers.parser import Parser
 
 class TestParser(unittest.TestCase):
-    # def setUp(self):
 
     def test_currency_type(self):
         # USD must be marked a valid currency type
@@ -52,6 +51,4 @@ class TestParser(unittest.TestCase):
         with self.assertRaises(argparse.ArgumentTypeError) as ctxt:
             Parser.currency_type(input_str)
             self.assertTrue(error_msg in ctxt.exception)
-
-    # def tearDown(self):
 
