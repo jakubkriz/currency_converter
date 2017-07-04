@@ -10,6 +10,9 @@
 - --output_currency - requested/output currency - 3 letters name or currency symbol, optional
 - if output currency is not specified, all known currencies are used instead
 
+## Currency Exchange Rates
+- An external API is used - http://fixer.io/.
+
 ## Run Tests
 ```bash
 python -m unittest discover
