@@ -30,7 +30,7 @@ class TestConversionManager(unittest.TestCase):
                 'amount': amount
                 }, 
             'output': {
-                output_currency: rate * amount
+                output_currency: "%0.2f"%(rate * amount)
                 }
             }
         expected_output = json.dumps(expected_output_dict)
