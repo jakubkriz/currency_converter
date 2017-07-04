@@ -12,6 +12,11 @@ class TestCurrencyConverterHelper(unittest.TestCase):
         is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
         self.assertEqual(is_curr_code, True)
 
+        # A valid currency code can also be surrounded by whitespace characters
+        currency_code = '  EUR    '
+        is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
+        self.assertEqual(is_curr_code, True)
+
         # Number is not a currency code
         currency_code = '123'
         is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
@@ -27,7 +32,8 @@ class TestCurrencyConverterHelper(unittest.TestCase):
         is_curr_code = CurrencyConverterHelper.is_currency_code(currency_code)
         self.assertEqual(is_curr_code, False)
 
-    # def test_is_currency_symbol(self):     
+    # def test_is_currency_symbol(self):    
+
 
     # def tearDown(self):
 
