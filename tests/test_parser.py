@@ -53,8 +53,5 @@ class TestParser(unittest.TestCase):
             Parser.currency_type(input_str)
             self.assertTrue(error_msg in ctxt.exception)
 
-
-    # def test_parse_arguments(self):
-
     # def tearDown(self):
 

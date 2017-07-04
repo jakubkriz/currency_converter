@@ -17,11 +17,13 @@ class Parser:
         parser.add_argument(
             '--amount', 
             type=float,
-            default=None)
+            default=None, 
+            required=True)
         parser.add_argument(
             '--input_currency', 
             type=Parser.currency_type,
-            default=None)
+            default=None, 
+            required=True)
         parser.add_argument(
             '--output_currency', 
             type=Parser.currency_type,
