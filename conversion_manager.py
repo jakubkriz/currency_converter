@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+from decimal import Decimal
 
 from external_services.currency_api import CurrencyApi
 from helpers.parser_helper import ParserHelper
@@ -14,8 +15,19 @@ class ConversionManager:
         self.input_currency = self.__get_input_currency(input_currency)
         self.output_currencies = self.__get_output_currencies(output_currency)
 
-    # def convert_amount(self):
-    #     if 
+    def convert_amount(self):
+        input_dict = {
+            u'amount': self.amount, 
+            u'currency': self.input_currency}
+
+        output_dict = {}
+        for output_currency in self.output_currencies:
+            rate = CurrencyApi.get_rate(self.input_currency, output_currency)
+            value = Decimal(self.amount) * Decimal(rate)
+            current_dict = {output_currency: float(value)}
+            output_dict.update(current_dict)
+
+        return json.dumps({u'input': input_dict, u'output': output_dict})
 
     def __get_input_currency(self, input_currency):
         # If input currency is a symbol, convert it to currency code
