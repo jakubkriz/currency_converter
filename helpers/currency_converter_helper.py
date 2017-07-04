@@ -12,7 +12,7 @@ class CurrencyConverterHelper:
     def is_currency_code(input_string):
         input_string = input_string.strip()
 
-        # Check format - 3 letters in uppercase
+        # Check format - 3 capital letters
         pattern = re.compile(r'\s*[A-Z]{3}\s*')
         if pattern.match(input_string):
             # Check the code against codes in the file
