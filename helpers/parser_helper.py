@@ -40,12 +40,11 @@ class ParserHelper(object):
     def get_currency_from_symbol(input_currency):
         with open(CURR_SYM_FILE) as file:
             currencies = json.load(file)
-            # Get both symbols and corresponding currency codes
             for symbol, codes in currencies.iteritems():
                 if input_currency.decode('utf-8') == symbol:
                     # Return the 1st currency code for the given symbol
                     return codes[0]
-        # Handle errors
+
         msg = strings.CODE_FROM_SYMBOL_ERROR
         msg = msg.format(input_currency, CURR_SYM_FILE)
         Logger.log_error(msg)

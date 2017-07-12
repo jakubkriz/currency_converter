@@ -30,7 +30,6 @@ class Parser(object):
             '--output_currency', 
             type=Parser.currency_type)
 
-        # Parse the arguments from the args variable
         return parser.parse_args(args)
         
     @staticmethod
