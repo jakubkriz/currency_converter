@@ -3,6 +3,7 @@ import os
 
 def_path = os.path.dirname(__file__)
 
+# For error and debug logs
 LOG_FILE = os.path.join(def_path, "log.txt") 
 
 # Mapping between currency symbols and currency codes
