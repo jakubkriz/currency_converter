@@ -2,7 +2,7 @@
 import datetime
 import sys
 
-class Logger:
+class Logger(object):
     """
     A class to log debug information and errors
     """

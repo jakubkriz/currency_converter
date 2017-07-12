@@ -5,7 +5,7 @@ import requests
 import strings
 from logger import Logger
 
-class CurrencyApi:
+class CurrencyApi(object):
     """
     Represents a service used to get a currency rate between given currencies
     """

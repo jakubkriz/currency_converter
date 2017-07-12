@@ -8,7 +8,7 @@ from helpers.parser_helper import ParserHelper
 from logger import Logger
 import strings
 
-class ConversionManager:
+class ConversionManager(object):
     """
     Represents a main class responsible for currency conversion
     """

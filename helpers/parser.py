@@ -5,7 +5,7 @@ import argparse
 from parser_helper import ParserHelper
 import strings
 
-class Parser:
+class Parser(object):
     """
     Represents a helper class for parsing command line arguments
     """

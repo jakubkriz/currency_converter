@@ -6,7 +6,7 @@ import json
 
 from logger import Logger
 
-class ParserHelper:
+class ParserHelper(object):
     """
     Represents a helper class for Parser
         currencies_file = a file containing currency symbols 
