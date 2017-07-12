@@ -10,9 +10,8 @@ if __name__ == '__main__':
 	# Parse arguments from the command line
     parsed_args = Parser.parse_arguments(sys.argv[1:])
 
-    manager = ConversionManager()
     # Convert the amount for given currencies
-    print manager.convert_amount(
+    print ConversionManager().convert_amount(
         parsed_args.amount, 
         parsed_args.input_currency, 
         parsed_args.output_currency)

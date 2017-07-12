@@ -9,7 +9,6 @@ class Parser(object):
     """
     Represents a helper class for parsing command line arguments
     """
-
     @staticmethod
     def parse_arguments(args):
         parser = argparse.ArgumentParser()
@@ -39,11 +38,10 @@ class Parser(object):
     def currency_type(input_string):
         input_string = input_string.strip()
         error_message = strings.INVALID_INPUT.format(input_string)
-       
+        
         # 3-letter currency code or a currency symbol
-        parser_helper = ParserHelper()
-        if parser_helper.is_currency_code(input_string) or \
-           parser_helper.is_currency_symbol(input_string):
+        if ParserHelper.is_currency_code(input_string) or \
+           ParserHelper.is_currency_symbol(input_string):
             return input_string
         else:
             raise argparse.ArgumentTypeError(error_message)

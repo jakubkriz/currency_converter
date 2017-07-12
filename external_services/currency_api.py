@@ -17,7 +17,7 @@ class CurrencyApi(object):
         response = requests.get(complete_url, timeout=3)
         # Error in processing the request occured
         if not response.status_code == 200:
-            Logger().log_error(strings.API_ERROR.format(response.status_code))
+            Logger.log_error(strings.API_ERROR.format(response.status_code))
             return None
         # Success -> return the rate
         return response.json()[u'rates'][currency_output]
@@ -30,7 +30,7 @@ class CurrencyApi(object):
         response = requests.get(url, timeout=3)
         # Error in processing the request occured
         if not response.status_code == 200:
-            Logger().log_error(strings.API_ERROR.format(response.status_code))
+            Logger.log_error(strings.API_ERROR.format(response.status_code))
             return None
         # Create list of currency codes from the data obtained from the API
         for currency in response.json()[u'rates'].keys():
