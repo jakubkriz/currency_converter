@@ -6,40 +6,40 @@
         "EUR"
     ],
     "$": [
-        "USD", 
-        "ARS", 
-        "AUD", 
-        "BSD", 
-        "BBD", 
-        "BMD", 
-        "BND", 
-        "CAD", 
-        "KYD", 
-        "CLP", 
-        "COP", 
-        "XCD", 
-        "SVC", 
-        "FJD", 
-        "GYD", 
-        "HKD", 
-        "LRD", 
-        "MXN", 
-        "NAD", 
-        "NZD", 
-        "SGD", 
-        "SBD", 
-        "SRD", 
+        "USD",
+        "ARS",
+        "AUD",
+        "BSD",
+        "BBD",
+        "BMD",
+        "BND",
+        "CAD",
+        "KYD",
+        "CLP",
+        "COP",
+        "XCD",
+        "SVC",
+        "FJD",
+        "GYD",
+        "HKD",
+        "LRD",
+        "MXN",
+        "NAD",
+        "NZD",
+        "SGD",
+        "SBD",
+        "SRD",
         "TVD"
     ],
     "£": [
-        "GBP", 
-        "EGP", 
-        "FKP", 
-        "GIP", 
-        "GGP", 
-        "IMP", 
-        "JEP", 
-        "LBP", 
+        "GBP",
+        "EGP",
+        "FKP",
+        "GIP",
+        "GGP",
+        "IMP",
+        "JEP",
+        "LBP",
         "SHP",
         "SYP"
     ],
@@ -47,14 +47,14 @@
         "AFN"
     ],
     "ƒ": [
-        "ANG", 
+        "ANG",
         "AWG"
     ],
     "₡": [
         "CRC"
     ],
     "₱": [
-        "CUP", 
+        "CUP",
         "PHP"
     ],
     "₪": [
@@ -64,21 +64,21 @@
         "INR"
     ],
     "﷼": [
-        "IRR", 
+        "IRR",
         "OMR",
         "QAR",
         "SAR",
         "YER"
     ],
     "¥": [
-        "CNY", 
+        "CNY",
         "JPY"
     ],
     "៛": [
         "KHR"
     ],
     "₩": [
-        "KPW", 
+        "KPW",
         "KRW"
     ],
     "₭": [
